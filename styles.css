@@ -1,0 +1,220 @@
+body,
+html,
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+}
+.mainContainer {
+  background: #f3f5fc;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  gap: 50px;
+}
+
+.logoContainer {
+  padding-left: 40px;
+  margin-bottom: 60px;
+  width: 120px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.aluraLogoContainer {
+  margin: 50px;
+  width: 100%;
+  height: 50%;
+}
+
+.socialMedia {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 15px;
+}
+
+.socialMedia > a > svg {
+  padding: 5px;
+  border: 2px solid #0a387100;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.socialMedia > a > svg:hover {
+  transform: translateY(-5px);
+  border: 2px solid #0a3871;
+  border-radius: 50%;
+}
+
+.socialMedia > a:not(:last-child)::after {
+  content: "";
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  background-color: #0a3871;
+  width: 3px;
+  height: 50px;
+  cursor: default;
+}
+
+.encrypterBox {
+  width: 50%;
+  height: 60%;
+  margin: 100px 60px;
+}
+
+.inputText {
+  all: unset;
+  padding: 30px;
+  width: 90%;
+  height: 90%;
+  font-size: 32px;
+}
+
+.inputText::placeholder {
+  color: #0a3871;
+  font-weight: 400;
+}
+
+.infoContainer {
+  margin: 10px 0;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.button {
+  border: 2px solid #0a3871;
+  border-radius: 24px;
+  width: 300px;
+  height: 60px;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 0.216);
+}
+
+.primary {
+  background: #0a3871;
+  color: #ffffff;
+}
+
+.secondary {
+  background: #d8dfe800;
+  color: #0a3871;
+}
+
+.encrypterResult {
+  position: absolute;
+  width: 400px;
+  height: 90vh;
+  right: 40px;
+  top: 40px;
+  background: #ffffff;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notFound {
+  display: flex;
+  height: 350px;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.doll {
+  width: 250px;
+  height: 224px;
+}
+
+.notFoundContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.notFoundTitle {
+  width: 250px;
+  color: #343a40;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.notFoundText {
+  width: 200px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #495057;
+}
+
+.inputText::-webkit-scrollbar,
+.resultText::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+.inputText::-webkit-scrollbar-thumb,
+.resultText::-webkit-scrollbar-thumb {
+  background: rgba(29, 73, 128, 0.838);
+  border-radius: 4px;
+}
+
+.inputText::-webkit-scrollbar-thumb:hover,
+.resultText::-webkit-scrollbar-thumb:hover {
+  background: rgb(21, 66, 120);
+  box-shadow: 0 0 2px 1px rgb(14, 50, 95);
+}
+
+/* Estilos track de scroll */
+.inputText::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+.inputText::-webkit-scrollbar-track:hover,
+.inputText::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
+.result {
+  width: 100%;
+  height: 90%;
+  padding: 80px 0 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.resultText {
+  all: unset;
+  width: 310px;
+  height: calc(100% - 140px);
+  font-size: 24px;
+  color: #495057;
+}
