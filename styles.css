@@ -1,3 +1,12 @@
+:root {
+  --encrypter-box-width: calc(100% - 700px);
+  --encrypter-box-width-tablet: calc(100% - 550px);
+  --encrypter-box-height: calc(100% - 200px);
+  --encrypter-input-text-height: calc(100% - 150px);
+  --encrypter-result-width: calc(100% - 840px);
+  --encrypter-result-height: calc(100% - 100px);
+  --logo-container-height: calc(100% - 100px);
+}
 body,
 html,
 * {
@@ -5,31 +14,36 @@ html,
   padding: 0;
   font-family: "Inter";
 }
-.mainContainer {
+body {
   background: #f3f5fc;
+}
+.mainContainer {
   width: 100vw;
   height: 100vh;
-  position: relative;
   display: flex;
-  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .logoContainer {
-  padding-left: 40px;
-  margin-bottom: 60px;
   width: 120px;
-  height: 90%;
+  height: var(--logo-container-height);
+  max-height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
+  padding-left: 20px;
 }
 
 .aluraLogoContainer {
-  margin: 50px;
   width: 100%;
   height: 50%;
+}
+.logo {
+  width: 100%;
 }
 
 .socialMedia {
@@ -40,6 +54,7 @@ html,
   justify-content: end;
   align-items: center;
   gap: 15px;
+  padding-bottom: 30px;
 }
 
 .socialMedia > a > svg {
@@ -67,16 +82,17 @@ html,
 }
 
 .encrypterBox {
-  width: 50%;
-  height: 60%;
-  margin: 100px 60px;
+  width: var(--encrypter-box-width);
+  height: var(--encrypter-box-height);
+  max-height: 600px;
+  margin: 100px 50px;
 }
 
 .inputText {
   all: unset;
   padding: 30px;
   width: 90%;
-  height: 90%;
+  height: var(--encrypter-input-text-height);
   font-size: 32px;
 }
 
@@ -123,17 +139,17 @@ html,
 }
 
 .encrypterResult {
-  position: absolute;
-  width: 400px;
-  height: 90vh;
-  right: 40px;
-  top: 40px;
+  width: calc(var(--encrypter-box-width) - 5%);
+  max-width: 350px;
+  height: var(--encrypter-result-height);
+  max-height: 650px;
   background: #ffffff;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 40px;
 }
 
 .notFound {
@@ -217,4 +233,173 @@ html,
   height: calc(100% - 140px);
   font-size: 24px;
   color: #495057;
+}
+
+.footerSocialMedia {
+  gap: 30px;
+  background: #092e5c;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.footerSocialMedia > a > svg {
+  fill: #a5b2c1;
+  transition: 0.3s;
+}
+
+.footerSocialMedia > a > svg:hover {
+  fill: #88a5c5;
+}
+
+@media screen and (max-width: 1280px) {
+  .mainContainer {
+    width: 100%;
+    max-height: 100%;
+    gap: 10px;
+  }
+  .logoContainer {
+    width: 100px;
+    padding-left: 0;
+  }
+  .encrypterBox {
+    width: var(--encrypter-box-width-tablet);
+    margin: 100px 50px 100px 10px;
+  }
+  .inputText {
+    font-size: 24px;
+  }
+  .encrypterResult {
+    min-width: 350px;
+    margin: 0;
+  }
+  .doll {
+    width: 200px;
+    height: 174px;
+  }
+  .button {
+    width: 200px;
+    height: 50px;
+  }
+  .resultText{
+    width: 90%;
+  }
+}
+@media screen and (max-width: 888px) {
+  .mainContainer {
+    width: calc(100% - 150px);
+    height: auto;
+    margin-left: 75px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logoContainer {
+    width: calc(100% - 100px);
+    height: 100px;
+    color: red;
+    justify-content: flex-start;
+    padding: 10px 0 0 0;
+  }
+  .aluraLogoContainer {
+    height: 100%;
+    padding: 50px;
+  }
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+  .socialMedia {
+    display: none;
+  }
+  .encrypterBox {
+    width: 90%;
+    max-height: auto;
+    height: 600px;
+    margin: 0 75px;
+  }
+  .inputText {
+    width: 100%;
+    height: 400px;
+    padding: 30px 0;
+  }
+  .buttonsContainer {
+    width: 100%;
+    justify-content: center;
+  }
+  .button {
+    width: 300px;
+    height: 60px;
+  }
+  .encrypterResult {
+    height: auto;
+    width: 90%;
+    min-height: 50px;
+    max-width: 100%;
+    margin: 20px 0 50px 0;
+    padding: 30px 0;
+  }
+
+  .result {
+    padding: 0 20px;
+    height: auto;
+    min-height: 200px;
+  }
+  .resultText {
+    height: 200px;
+    max-height: 350px;
+    width: calc(100% - 100px);
+  }
+  .notFound {
+    padding: 0;
+    height: auto;
+  }
+  .doll {
+    display: none;
+  }
+  .footerSocialMedia {
+    display: flex;
+  }
+}
+@media screen and (max-width: 600px) {
+  .mainContainer {
+    width: 100%;
+    margin: 0;
+  }
+  .logoContainer {
+    width: 100%;
+  }
+  .logo {
+    height: 25px;
+  }
+  .aluraLogoContainer {
+    padding: 50px 0;
+    width: 100%;
+  }
+  .encrypterBox {
+    max-height: 450px;
+    height: 420px;
+  }
+  .inputText {
+    height: 250px;
+    padding: 0;
+  }
+  .buttonsContainer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .button {
+    width: 100%;
+    height: 60px;
+  }
+  .result {
+    padding: 0 30px;
+  }
+  .resultText {
+    width: 100%;
+  }
+  .result > .button {
+    width: 80%;
+  }
 }
